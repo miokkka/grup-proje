@@ -1,5 +1,5 @@
-@import '../../style/variable';
-@import '../../style/mixins';
+@import '../../styles/variables';
+@import '../../styles/global';
 
 .navbar{
     
@@ -19,7 +19,7 @@
         display: flex;
         gap: 30px;
 
-        @include mobile {
+        @media( max-width: $mobile){
             position: fixed;
             top: 0;
             right: -100%;
@@ -41,11 +41,11 @@
     &__link {
         font-size: 20px;
         font-weight: 500;
-        color: $text-color;
+        color: $text-main;
         transition: color 0.3s;
 
         &:hover {
-            color: $light-color;
+            color: $text-muted;
         }
     }
 
@@ -54,7 +54,7 @@
         cursor: pointer;
         z-index: 20;
 
-        @include mobile {
+        @media( max-width: $mobile){
             display: block;
         }
 
@@ -64,7 +64,7 @@
             height: 3px;
             margin: 5px auto;
             transition: all 0.3s ease-in-out;
-            background-color: $text-color;
+            background-color: $text-main;
         }
 
         &.active .bar:nth-child(2) {
