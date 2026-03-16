@@ -3,7 +3,8 @@ import Box from "./Components/Box/Box";
 import InfoCard from "./Components/InfoCard/InfoCard";
 import Navbar from "./Components/Navbar/Navbar";
 import ShoppingCard from "./Components/ShoppingCard/ShoppingCard";
-import './App.scss';
+import "./App.scss";
+import { LuPackage, LuCircleCheck, LuGift } from "react-icons/lu";
 
 function App() {
   const summaryData = [
@@ -59,20 +60,48 @@ function App() {
   ];
 
   return (
-    <div>
+    <div className="app-wrapper">
       <link
         href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
         rel="stylesheet"
       />
-      <div className="web-title">
-        <h1 className="main-title">Dashboard</h1>
-        <p className="desc">Welcome back! Here's your account overview.</p>
-      </div>
-      <div className="boxes">
-        <Box />
-      </div>
-      <div className="recently-viewed">
+      <div className="main-content">
+        <h1 className="section-title">Dashboard</h1>
+        <p className="section-text">
+          Welcome back! Here's your account overview.
+        </p>
+        <div className="box-grid">
+          {summaryData.map((data, index) => (
+            <Box
+              key={index}
+              title={data.label}
+              value={data.value}
+              icon={data.icon}
+            />
+          ))}
+        </div>
         <h2 className="section-title">Recently Viewed</h2>
+        <div className="products-grid">
+          {recentProducts.map((product, index) => (
+            <InfoCard
+              key={index}
+              img={product.img}
+              title={product.title}
+              price={product.price}
+            />
+          ))}
+        </div>
+        <h2 className="section-title">Shopping Cart</h2>
+        <div className="cart-list">
+          {cartItems.map((item, index) => (
+            <InfoCard
+              key={index}
+              img={item.img}
+              title={item.title}
+              price={item.price}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

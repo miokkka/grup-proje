@@ -1,0 +1,33 @@
+@use "../../styles/variables" as *;
+
+.box-card {
+  background-color: $card-bg;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: $sm;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  flex: 1;
+
+  .box-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .title {
+      color: $text-muted;
+      font-size: 14px;
+    }
+
+    .icon {
+      color:$success;
+      font-size: 20px;
+    }
+  }
+  .value {
+    font-size: 28px;
+    font-weight: bold;
+    color:$text-main;
+  }
+}

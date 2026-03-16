@@ -1,14 +1,18 @@
-import React from 'react';
-import './Box.scss';
+import React from "react";
+import "./Box.scss";
 
+const Box = ({ title, value, icon }) => {
+  function Box() {
+    return (
+      <div className="box-card">
+        <div className="box-header">
+          <span className="title">{title}</span>
+          <span className="icon">{icon}</span>
+        </div>
+        <div className="value">{value}</div>
+      </div>
+    );
+  }
+};
 
-
-function Box() {
-  return (
-    <div>
-      
-    </div>
-  )
-}
-
-export default Box
+export default Box;
