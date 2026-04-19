@@ -1,8 +1,20 @@
-import React from 'react'
+import React from 'react';
+import './InfoCard.scss';
 
-function InfoCard() {
+function InfoCard({img, title, price, oldPrice}) {
   return (
-    <div>
+    <div className='info-card'>
+      <img src={img} alt={title} />
+      <div className="card-content">
+        <div className="details">
+          <h4>{title}</h4>
+          <span className='price'>${price}</span>
+          {oldPrice && <span className='old-price'>${oldPrice}</span>}
+        </div>
+        <button className='cart-btn'>
+          <i className='ri-shopping-cart-2-line'></i>
+        </button>
+      </div>
       
     </div>
   )

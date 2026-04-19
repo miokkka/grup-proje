@@ -6,6 +6,7 @@ import ShoppingCard from "./Components/ShoppingCard/ShoppingCard";
 import "./App.scss";
 import { LuPackage, LuCircleCheck, LuGift } from "react-icons/lu";
 
+
 function App() {
   const summaryData = [
     { label: "Active Orders", value: "3", icon: <LuPackage />, colorClass: "" },
@@ -28,6 +29,7 @@ function App() {
       image: "",
       title: "Premium Leather Wallet",
       price: 49.99,
+      oldPrice: 69.99,
     },
     {
       image: "",
@@ -88,6 +90,7 @@ function App() {
               img={product.img}
               title={product.title}
               price={product.price}
+              oldPrice={product.oldPrice}
             />
           ))}
         </div>
