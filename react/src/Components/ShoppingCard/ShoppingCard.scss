@@ -1,0 +1,61 @@
+@import "../../styles/variables";
+
+.cart-container {
+  background-color: $card-bg;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid $border;
+
+  .cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid $border;
+
+
+    .item-details {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      img {
+        width: 60px;
+        height: 60px;
+        border-radius: 8px;
+        background-color: $background;
+      }
+
+      h5 {
+        font-size: 0.9rem;
+        color: $text-main;
+        margin-bottom: 0.25rem;
+      }
+
+      p {
+        font-size: 0.8rem;
+        color: $text-muted;
+      }
+    }
+
+    .item-total {
+      font-weight: 600;
+      color: $text-main;
+    }
+  }
+
+  .cart-subtotal {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 2px solid $border;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.125rem;
+
+    strong {
+      color: $primary;
+      font-size: 1.25rem;
+    }
+  }
+}

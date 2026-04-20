@@ -5,7 +5,12 @@ import Navbar from "./Components/Navbar/Navbar";
 import ShoppingCard from "./Components/ShoppingCard/ShoppingCard";
 import "./App.scss";
 import { LuPackage, LuCircleCheck, LuGift } from "react-icons/lu";
-
+import walletImg from './assets/Wallet.jpg';
+import chargerImg from './assets/Charger.jpg';
+import mugImg from './assets/mug.jpg';
+import standImg from './assets/stand.jpg';
+import headphonesImg from './assets/headphones.jpg';
+import watchImg from './assets/watch.jpg';
 
 function App() {
   const summaryData = [
@@ -26,23 +31,23 @@ function App() {
 
   const recentProducts = [
     {
-      image: "",
+      image: walletImg,
       title: "Premium Leather Wallet",
       price: 49.99,
       oldPrice: 69.99,
     },
     {
-      image: "",
+      image: chargerImg,
       title: "Wireless Charging Pad",
       price: 29.99,
     },
     {
-      image: "",
+      image: mugImg,
       title: "Coffee Mug Set",
       price: 24.99,
     },
     {
-      image: "",
+      image: standImg,
       title: "Portable Phone Stand",
       price: 19.99,
     },
@@ -50,12 +55,12 @@ function App() {
 
   const cartItems = [
     {
-      image: "",
+      image: headphonesImg,
       name: "Wireless Bluetooth Headphones",
       price: 79.99,
     },
     {
-      image: "",
+      image: watchImg,
       name: "Smart Watch Series 8",
       price: 399.99,
     },
@@ -97,13 +102,18 @@ function App() {
         <h2 className="section-title">Shopping Cart</h2>
         <div className="cart-list">
           {cartItems.map((item, index) => (
-            <InfoCard
+            <ShoppingCard
               key={index}
               img={item.img}
               title={item.title}
               price={item.price}
             />
           ))}
+
+         <div className="cart-subtotal">
+              <span>Subtotal:</span>
+              <strong>$479.98</strong>
+            </div>
         </div>
       </div>
     </div>
