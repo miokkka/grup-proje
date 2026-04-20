@@ -56,22 +56,18 @@ function App() {
   const cartItems = [
     {
       image: headphonesImg,
-      name: "Wireless Bluetooth Headphones",
+      title: "Wireless Bluetooth Headphones",
       price: 79.99,
     },
     {
       image: watchImg,
-      name: "Smart Watch Series 8",
+      title: "Smart Watch Series 8",
       price: 399.99,
     },
   ];
 
   return (
     <div className="app-wrapper">
-      <link
-        href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
-        rel="stylesheet"
-      />
       <Navbar/>
       <div className="main-content">
         <h1 className="section-title">Dashboard</h1>

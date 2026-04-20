@@ -9,10 +9,9 @@ function Navbar() {
     };
   return (
     <div className='navbar'>
-          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" />
       <div className="navbar__header">
         <h2><strong>My Account</strong></h2>
-        <p>Tickets</p>
+        <p><strong><i class="ri-ticket-2-line"> Tickets</i></strong></p>
       </div>
         <div className="navbar__container">
                 <div className={`navbar__hamburger ${isOpen ? 'active' : ''}`} onClick={toggleMenu}>
