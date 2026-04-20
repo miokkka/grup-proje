@@ -72,6 +72,7 @@ function App() {
         href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
         rel="stylesheet"
       />
+      <Navbar/>
       <div className="main-content">
         <h1 className="section-title">Dashboard</h1>
         <p className="section-text">

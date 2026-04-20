@@ -1,7 +1,7 @@
 import React from 'react'
 import './ShoppingCard.scss';
 
-const ShoppingCart = ({ image, name, price }) => {
+const ShoppingCard = ({ image, name, price }) => {
   return (
     <div className="cart-item">
       <div className="item-details">
