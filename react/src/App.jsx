@@ -14,7 +14,10 @@ import watchImg from "./assets/watch.jpg";
 
 function App() {
   const summaryData = [
-    { label: "Active Orders", value: "3", icon: <LuPackage />, colorClass: "" },
+    { label: "Active Orders",
+       value: "3",
+       icon: <LuPackage />,
+       colorClass: "" },
     {
       label: "Completed Orders",
       value: "24",
@@ -91,19 +94,19 @@ function App() {
           {recentProducts.map((product, index) => (
             <InfoCard
               key={index}
-              img={product.img}
+              image={product.image}
               title={product.title}
               price={product.price}
               oldPrice={product.oldPrice}
             />
           ))}
         </div>
-        <h2 className="section-title">Shopping Cart</h2>
+        <h2 className="section-title"><i class="ri-shopping-cart-line"> Shopping Cart</i></h2>
         <div className="cart-list">
           {cartItems.map((item, index) => (
             <ShoppingCard
               key={index}
-              img={item.img}
+              image={item.image}
               title={item.title}
               price={item.price}
             />

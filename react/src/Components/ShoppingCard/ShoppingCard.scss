@@ -1,11 +1,5 @@
 @import "../../styles/variables";
 
-.cart-container {
-  background-color: $card-bg;
-  padding: 1.5rem;
-  border-radius: 12px;
-  border: 1px solid $border;
-
   .cart-item {
     display: flex;
     justify-content: space-between;
@@ -23,7 +17,6 @@
         width: 60px;
         height: 60px;
         border-radius: 8px;
-        background-color: $background;
       }
 
       h5 {
@@ -58,4 +51,3 @@
       font-size: 1.25rem;
     }
   }
-}

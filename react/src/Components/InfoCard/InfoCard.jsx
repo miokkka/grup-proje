@@ -1,10 +1,10 @@
 import React from 'react';
 import './InfoCard.scss';
 
-function InfoCard({img, title, price, oldPrice}) {
+function InfoCard({image, title, price, oldPrice}) {
   return (
     <div className='info-card'>
-      <img src={img} alt={title} />
+      <img src={image} alt={title} />
       <div className="card-content">
         <div className="details">
           <h4>{title}</h4>
