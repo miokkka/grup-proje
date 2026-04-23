@@ -2,7 +2,7 @@ import React from "react";
 import "./Box.scss";
 
 const Box = ({ title, value, icon }) => {
-  function Box() {
+  
     return (
       <div className="box-card">
         <div className="box-header">
@@ -12,7 +12,7 @@ const Box = ({ title, value, icon }) => {
         <div className="value">{value}</div>
       </div>
     );
-  }
+  
 };
 
 export default Box;

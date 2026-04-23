@@ -5,12 +5,12 @@ import Navbar from "./Components/Navbar/Navbar";
 import ShoppingCard from "./Components/ShoppingCard/ShoppingCard";
 import "./App.scss";
 import { LuPackage, LuCircleCheck, LuGift } from "react-icons/lu";
-import walletImg from './assets/Wallet.jpg';
-import chargerImg from './assets/Charger.jpg';
-import mugImg from './assets/mug.jpg';
-import standImg from './assets/stand.jpg';
-import headphonesImg from './assets/headphones.jpg';
-import watchImg from './assets/watch.jpg';
+import walletImg from "./assets/Wallet.jpg";
+import chargerImg from "./assets/Charger.jpg";
+import mugImg from "./assets/mug.jpg";
+import standImg from "./assets/stand.jpg";
+import headphonesImg from "./assets/headphones.jpg";
+import watchImg from "./assets/watch.jpg";
 
 function App() {
   const summaryData = [
@@ -68,22 +68,24 @@ function App() {
 
   return (
     <div className="app-wrapper">
-      <Navbar/>
+      <Navbar />
       <div className="main-content">
         <h1 className="section-title">Dashboard</h1>
         <p className="section-text">
           Welcome back! Here's your account overview.
         </p>
-        <div className="box-grid">
-          {summaryData.map((data, index) => (
-            <Box
-              key={index}
-              title={data.label}
-              value={data.value}
-              icon={data.icon}
-            />
-          ))}
-        </div>
+        <section className="summary-boxes">
+          {summaryData.map((data, index) => {
+            return (
+              <Box
+                key={index}
+                title={data.label}
+                value={data.value}
+                icon={data.icon}
+              />
+            );
+          })}
+        </section>
         <h2 className="section-title">Recently Viewed</h2>
         <div className="products-grid">
           {recentProducts.map((product, index) => (
@@ -107,10 +109,10 @@ function App() {
             />
           ))}
 
-         <div className="cart-subtotal">
-              <span>Subtotal:</span>
-              <strong>$479.98</strong>
-            </div>
+          <div className="cart-subtotal">
+            <span>Subtotal:</span>
+            <strong>$479.98</strong>
+          </div>
         </div>
       </div>
     </div>
