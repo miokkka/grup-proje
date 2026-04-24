@@ -14,10 +14,7 @@ import watchImg from "./assets/watch.jpg";
 
 function App() {
   const summaryData = [
-    { label: "Active Orders",
-       value: "3",
-       icon: <LuPackage />,
-       colorClass: "" },
+    { label: "Active Orders", value: "3", icon: <LuPackage />, colorClass: "" },
     {
       label: "Completed Orders",
       value: "24",
@@ -101,7 +98,9 @@ function App() {
             />
           ))}
         </div>
-        <h2 className="section-title"><i class="ri-shopping-cart-line"> Shopping Cart</i></h2>
+        <h2 className="section-title">
+          <i class="ri-shopping-cart-line"> Shopping Cart</i>
+        </h2>
         <div className="cart-list">
           {cartItems.map((item, index) => (
             <ShoppingCard

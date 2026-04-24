@@ -1,5 +1,5 @@
-import React from 'react'
-import './ShoppingCard.scss';
+import React from "react";
+import "./ShoppingCard.scss";
 
 const ShoppingCard = ({ image, name, price }) => {
   return (
@@ -16,4 +16,4 @@ const ShoppingCard = ({ image, name, price }) => {
   );
 };
 
-export default ShoppingCard
+export default ShoppingCard;

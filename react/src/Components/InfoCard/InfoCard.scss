@@ -1,64 +1,66 @@
-@import '../../styles/variables';
-@import '../../styles/global';
+@import "../../styles/variables";
+@import "../../styles/global";
 
 .info-card {
-    background-color: $card-bg;
-    border-radius: 12px;
-    padding: 16px;
-    box-shadow: $sm;
-    border: 1px solid $border;
+  background-color: $card-bg;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: $sm;
+  border: 1px solid $border;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .card-content {
     display: flex;
-    flex-direction: column;
-    gap: 12px;
+    justify-content: space-between;
+    align-items: flex-end;
 
-    img {
-        width: 100%;
-        height: 140px;
-        object-fit: cover;
-        border-radius: 8px;
+    .details {
+      h4 {
+        font-size: 13px;
+        color: $text-main;
+        margin-bottom: 4px;
+      }
+
+      .price {
+        font-weight: 700;
+        font-size: 15px;
+        color: $text-main;
+      }
+
+      .old-price {
+        font-size: 12px;
+        color: $text-muted;
+        text-decoration: line-through;
+        margin-left: 6px;
+      }
     }
 
-    .card-content {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
+    .cart-btn {
+      background-color: $primary;
+      color: $white;
+      border: none;
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      transition: opacity 0.2s;
 
-        .details {
-            h4 {
-                font-size: 13px;
-                color: $text-main;
-                margin-bottom: 4px;
-            }
-            
-            .price {
-                font-weight: 700;
-                font-size: 15px;
-                color: $text-main;
-            }
-
-            .old-price {
-                font-size: 12px;
-                color: $text-muted;
-                text-decoration: line-through;
-                margin-left: 6px;
-            }
-        }
-
-        .cart-btn {
-            background-color: $primary;
-            color: $white;
-            border: none;
-            width: 32px;
-            height: 32px;
-            border-radius: 6px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 16px;
-            transition: opacity 0.2s;
-
-            &:hover { opacity: 0.9; }
-        }
+      &:hover {
+        opacity: 0.9;
+      }
     }
+  }
 }

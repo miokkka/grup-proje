@@ -1,18 +1,15 @@
-@import '../../styles/variables';
-@import '../../styles/global';
+@import "../../styles/variables";
+@import "../../styles/global";
 
+.navbar {
+  width: 260px;
+  height: 100vh;
+  padding: 20px 15px;
+  background-color: $sidebar-bg;
+  border-right: 1px solid $border;
+  position: sticky;
 
-
-.navbar{
-    
-    width: 260px;
-    height: 100vh;
-    padding: 20px 15px;
-    background-color: $sidebar-bg;
-    border-right: 1px solid $border;
-    position: sticky;
-
-    &__header {
+  &__header {
     margin-bottom: 2rem;
 
     h2 {
@@ -30,101 +27,105 @@
       font-weight: 600;
       font-size: 0.9rem;
     }
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    list-style: none;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    i {
+      font-size: 1.3rem;
+      color: $text-main;
     }
 
-
-    &__menu {
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
-        list-style: none;
-
-
+    a {
+      text-decoration: none;
+      color: $text-main;
+      font-weight: 500;
     }
 
-    &__item {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      padding: 0.8rem 1rem;
-      border-radius: 8px;
-      transition: all 0.3s ease;
-      cursor: pointer;
+    &:hover {
+      background-color: rgba($primary, 0.1);
+    }
 
-      i {
-        font-size: 1.3rem;
-        color: $text-main;
-      }
+    &.active {
+      background-color: $primary;
+    }
+  }
 
-      a {
-        text-decoration: none;
-        color: $text-main;
-        font-weight: 500;
-      }
+  &__hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+    position: relative;
+    z-index: 2000;
 
-      &:hover {
-        background-color: rgba($primary, 0.1);
-      }
+    .bar {
+      display: block;
+      width: 25px;
+      height: 3px;
+      transition: all 0.3s ease-in-out;
+      background-color: $primary;
+    }
 
-      &.active {
-        background-color: $primary;
-      }
+    &.active .bar:nth-child(2) {
+      opacity: 0;
+    }
+
+    &.active .bar:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+
+    &.active .bar:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+  }
+
+  @media (max-width: $tablet) {
+    position: fixed;
+    top: 0;
+    left: -260px;
+    width: 260px;
+    height: 100vh;
+    z-index: 1000;
+    transition: left 0.4s ease-in-out;
+    background-color: $background;
+
+    &.active {
+      left: 0;
+      box-shadow: 0 0 0 10000px $md;
     }
 
     &__hamburger {
-        display: none;
-        cursor: pointer;
-        flex-direction: column;
-        gap: 5px; 
-        position: relative;
-        z-index: 2000;
-
-        .bar {
-            display: block;
-            width: 25px;
-            height: 3px;
-            transition: all 0.3s ease-in-out;
-            background-color: $primary;
-            
-        }
-       
-       
-            &.active .bar:nth-child(2) {
-            opacity: 0;
-            }
-
-            &.active .bar:nth-child(1) {
-            transform: translateY(8px) rotate(45deg);
-            }
-
-            &.active .bar:nth-child(3) {
-            transform: translateY(-8px) rotate(-45deg);
-            }
-    }
-        
-            @media (max-width: $tablet) {
-                &__hamburger {
-                display: flex; // Tablet ve mobilde görünür yap
-                }
-  
-                &__menu {
-                    display: none; 
-    
-                     &.show {
-                        display: flex;
-                        position: absolute;
-                        top: 60px; // Navbar yüksekliğine göre ayarla
-                        left: 0;
-                        width: 100%;
-                        background: $sidebar-bg;
-                        flex-direction: column;
-                        padding: 20px;
-                        box-shadow: $md;
-                    }
-                }
-            }
-        
-
-        
+      display: flex;
+      position: fixed;
+      top: 25px;
+      left: 20px;
+      z-index: 1001;
+      transition: left 0.4s ease-in-out;
     }
 
+    &.active &__hamburger {
+      left: 210px;
+    }
+
+    &__menu {
+      display: flex;
+      flex-direction: column;
+      margin-top: 80px;
+    }
+  }
+}
